@@ -1,0 +1,15 @@
+    def caesar_cipher(string, nbr)
+      $abc = ("a".."z").to_a + ("a".."z").to_a + ("A".."Z").to_a + ("A".."Z").to_a
+      $input = string.split("")
+      for i in 0..$input.length-1 do
+        if $abc.include?($input[i])
+           $char = $abc.index($input[i]) + nbr
+           $input[i] = $abc[$char] 
+        else 
+            $input[i] = $input[i]
+        end
+      end
+      puts $input.join("")
+    end
+
+    caesar_cipher("What a string!", 5)
